@@ -30,15 +30,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:22px var(--pad);background:transparent;
-  transition:background .35s,padding .35s,border-color .35s;
-  border-bottom:1px solid transparent;
-  opacity:0;animation:fadeIn .6s ease .1s forwards;
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px var(--pad);background:transparent;transition:background .35s,padding .35s,border-color .35s;border-bottom:1px solid transparent;opacity:0;animation:fadeIn .6s ease .1s forwards}
 nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(20px);border-bottom-color:var(--border);padding:14px var(--pad)}
 .nav-logo{font-size:22px;font-weight:700;letter-spacing:-.5px;color:var(--text);text-decoration:none;flex-shrink:0}
 .nav-logo span{color:var(--accent)}
@@ -50,16 +43,10 @@ nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(20px);border-bottom
 .nav-cta{background:var(--accent)!important;color:#080808!important;padding:clamp(6px,1vw,9px) clamp(14px,2vw,22px)!important;font-weight:700!important;border-radius:40px;transition:background .2s,transform .2s!important}
 .nav-cta::after{display:none!important}
 .nav-cta:hover{background:var(--accent2)!important;transform:translateY(-2px)}
-@media(max-width:640px){
-  nav{padding:14px var(--pad);background:rgba(8,8,8,.95);backdrop-filter:blur(16px);border-bottom-color:var(--border)}
-  .nav-links{gap:clamp(10px,3vw,18px)}
-  .nav-links a{font-size:10px;letter-spacing:.5px}
-  .nav-cta{padding:6px 14px!important;font-size:10px}
-  .nav-logo{font-size:18px}
-}
+@media(max-width:640px){nav{padding:14px var(--pad);background:rgba(8,8,8,.95);backdrop-filter:blur(16px);border-bottom-color:var(--border)}.nav-links{gap:clamp(10px,3vw,18px)}.nav-links a{font-size:10px;letter-spacing:.5px}.nav-cta{padding:6px 14px!important;font-size:10px}.nav-logo{font-size:18px}}
 @media(max-width:400px){.nav-links{gap:8px}.nav-links a{font-size:9px}.nav-logo{font-size:16px}}
 
-/* ── SOCIAL STRIP ── */
+/* SOCIAL STRIP */
 .social-strip{position:fixed;left:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:16px;z-index:50}
 .social-strip a{color:var(--text3);text-decoration:none;transition:color .2s;display:flex;align-items:center;justify-content:center}
 .social-strip a:hover{color:var(--accent)}
@@ -67,7 +54,7 @@ nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(20px);border-bottom
 .social-strip::after{content:'';display:block;width:1px;height:40px;background:var(--border2);margin-top:8px}
 @media(max-width:900px){.social-strip{display:none}}
 
-/* ── HERO ── */
+/* HERO */
 #home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px var(--pad) 80px;position:relative;overflow:hidden}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:60px 60px;z-index:1}
 .hero-glow{position:absolute;top:10%;right:-5%;width:min(60%,480px);height:480px;background:radial-gradient(circle,rgba(200,240,96,.10) 0%,transparent 70%);pointer-events:none;z-index:1;filter:blur(50px)}
@@ -99,85 +86,106 @@ nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(20px);border-bottom
 @media(max-width:480px){#home{padding:80px var(--pad) 40px}.hero-headline{letter-spacing:-2px}.hero-right{min-height:clamp(180px,60vw,280px)}.hero-img-wrap{max-width:clamp(140px,55vw,240px)}.hero-img-badge,.hero-img-avail{display:none}.hero-stats{gap:12px;padding:12px 16px}}
 @media(max-width:360px){.hero-headline{font-size:36px}.hero-img-wrap{max-width:130px}}
 
-/* ── MARQUEE ── */
+/* MARQUEE */
 .marquee-strip{background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;overflow:hidden;white-space:nowrap;margin-top:40px}
 .marquee-inner{display:inline-flex;animation:marquee 28s linear infinite;gap:48px}
 .marquee-item{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--text2);font-weight:500}
 
-/* ── SECTION BASE ── */
-section{padding:clamp(60px,8vw,110px) var(--pad);position:relative;overflow-x:hidden}
-.section-label{font-size:11px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:40px;position:relative;display:inline-block}
-.section-label::after{content:'';position:absolute;bottom:-8px;left:0;width:40px;height:1px;background:var(--accent)}
+/* SECTION BASE */
+section{padding:clamp(52px,7vw,88px) var(--pad);position:relative;overflow-x:hidden}
+.section-label{font-size:11px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:32px;position:relative;display:inline-block}
+.section-label::after{content:'';position:absolute;bottom:-8px;left:0;width:28px;height:1px;background:var(--accent)}
 
-/* ── ABOUT (compact) ── */
+/* ── ABOUT — redesigned ── */
 #about{background:var(--bg)}
-.about-compact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center;margin-bottom:clamp(36px,5vw,60px)}
-.about-headline{font-size:clamp(34px,5vw,68px);font-weight:700;line-height:.95;letter-spacing:-2px}
-.about-headline .outline{-webkit-text-stroke:1px rgba(240,236,228,.2);color:transparent}
-.about-headline .acc{color:var(--accent)}
-.about-intro-col p{color:var(--text2);font-size:clamp(13px,1.8vw,15px);line-height:1.8;margin-bottom:20px}
-.about-cta{display:inline-flex;align-items:center;gap:12px;color:var(--accent);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:6px;transition:gap .2s}
-.about-cta:hover{gap:20px}
-.about-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:clamp(32px,5vw,52px)}
-.about-stat-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:clamp(16px,2.5vw,26px);transition:border-color .3s,transform .3s;text-align:center}
-.about-stat-card:hover{border-color:rgba(200,240,96,.25);transform:translateY(-4px)}
-.about-stat-card .big{font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--accent);line-height:1}
-.about-stat-card .big span{font-size:.6em}
-.about-stat-card .lbl{font-size:10px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-top:6px}
-.about-body-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);margin-bottom:clamp(28px,4vw,48px)}
-.about-body-row p{color:var(--text2);font-size:clamp(13px,1.6vw,14px);line-height:1.85}
-.interest-tags{display:flex;flex-wrap:wrap;gap:8px}
-.interest-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);border:1px solid var(--border2);padding:7px 16px;border-radius:40px;transition:all .3s;background:transparent;cursor:default}
-.interest-tag:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-dim);transform:translateY(-2px)}
-.edu-skills-grid{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px)}
-.skills-title{font-size:10px;color:var(--text3);letter-spacing:3px;text-transform:uppercase;margin-bottom:26px;font-weight:600}
-.edu-item{padding:16px 0;border-bottom:1px solid var(--border)}
-.skill-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.skill-name{min-width:120px;font-size:13px;font-weight:500;color:var(--text)}
-.skill-bar{flex:1;height:3px;background:var(--border2);border-radius:10px;overflow:hidden}
-.skill-fill{height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.2,.9,.4,1.1);width:100%;border-radius:10px}
-@media(max-width:900px){.about-compact-grid{grid-template-columns:1fr;gap:20px}.about-stats-row{grid-template-columns:repeat(2,1fr)}.about-body-row{grid-template-columns:1fr;gap:14px}}
-@media(max-width:600px){.about-stats-row{gap:10px}.edu-skills-grid{grid-template-columns:1fr;gap:32px}.skill-name{min-width:100px}}
-@media(max-width:400px){.about-stat-card .big{font-size:26px}}
+.about-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start;margin-bottom:clamp(28px,4vw,48px)}
+.about-h{font-size:clamp(30px,4.5vw,58px);font-weight:700;line-height:.95;letter-spacing:-2px}
+.about-h .outline{-webkit-text-stroke:1px rgba(240,236,228,.2);color:transparent}
+.about-h .acc{color:var(--accent)}
+.about-right-col{display:flex;flex-direction:column;gap:16px;padding-top:6px}
+.about-right-col p{color:var(--text2);font-size:clamp(13px,1.7vw,14px);line-height:1.85}
+.about-cta{display:inline-flex;align-items:center;gap:10px;color:var(--accent);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:4px;transition:gap .2s;width:fit-content}
+.about-cta:hover{gap:18px}
 
-/* ── PROJECTS ── */
+/* Stats row */
+.about-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:clamp(24px,4vw,40px)}
+.about-num-cell{background:var(--bg);padding:clamp(14px,2.5vw,22px) clamp(12px,2vw,20px);text-align:center}
+.about-num-cell .n{font-size:clamp(26px,3.5vw,40px);font-weight:700;line-height:1;color:var(--accent)}
+.about-num-cell .n sup{font-size:.55em;vertical-align:super}
+.about-num-cell .l{font-size:10px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-top:5px}
+
+/* Two-col body */
+.about-body{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);margin-bottom:clamp(24px,4vw,40px)}
+.about-body p{color:var(--text2);font-size:13px;line-height:1.85}
+
+/* Tags */
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(28px,4vw,44px)}
+.tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text2);border:1px solid var(--border2);padding:6px 14px;border-radius:40px;transition:all .25s;cursor:default}
+.tag:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-dim)}
+
+/* Edu + Skills */
+.about-bottom{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
+.ab-col-title{font-size:10px;color:var(--text3);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-weight:600}
+.edu-entry{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.edu-entry:last-child{border-bottom:none}
+.edu-yr{font-size:10px;color:var(--text3);letter-spacing:1px;min-width:72px;padding-top:3px;flex-shrink:0}
+.edu-info strong{font-size:13px;font-weight:600;display:block;margin-bottom:2px}
+.edu-info span{font-size:12px;color:var(--text2)}
+.skill-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.skill-name{min-width:110px;font-size:12px;font-weight:500;color:var(--text);flex-shrink:0}
+.skill-bar{flex:1;height:2px;background:var(--border2);border-radius:10px;overflow:hidden}
+.skill-fill{height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.2,.9,.4,1.1);border-radius:10px}
+.skill-pct{font-size:10px;color:var(--accent);min-width:30px;text-align:right;flex-shrink:0}
+
+@media(max-width:860px){.about-top{grid-template-columns:1fr;gap:18px}.about-nums{grid-template-columns:repeat(2,1fr)}.about-body{grid-template-columns:1fr;gap:12px}.about-bottom{grid-template-columns:1fr;gap:28px}}
+@media(max-width:480px){.about-nums{grid-template-columns:repeat(2,1fr)}.skill-name{min-width:90px}}
+
+/* ── PROJECTS — redesigned ── */
 #projects{background:var(--bg2)}
-.projects-header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px}
-.projects-headline{font-size:clamp(36px,5.5vw,68px);font-weight:700;line-height:.95;letter-spacing:-2px}
-.projects-headline .outline{-webkit-text-stroke:1px rgba(240,236,228,.2);color:transparent}
-.projects-count{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text3);padding-bottom:8px;white-space:nowrap}
-.projects-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.filter-pill{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;color:var(--text2);border:1px solid var(--border2);padding:8px 20px;border-radius:40px;background:transparent;cursor:pointer;transition:all .25s;font-family:var(--font)}
-.filter-pill:hover,.filter-pill.active{color:#080808;background:var(--accent);border-color:var(--accent)}
-.project-featured{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--surface);border-radius:28px;border:1px solid var(--border);overflow:hidden;margin-bottom:20px;transition:border-color .3s,transform .3s}
-.project-featured:hover{border-color:rgba(200,240,96,.25);transform:translateY(-4px)}
-.project-featured-img{background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);min-height:280px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.proj-icon-big{width:80px;height:80px;opacity:.85;color:var(--accent)}
-.proj-glow-bg{position:absolute;inset:0;background:radial-gradient(circle at 40% 50%,rgba(200,240,96,.08) 0%,transparent 65%);pointer-events:none}
-.project-featured-body{padding:clamp(22px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between}
-.proj-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
-.project-featured-body h3{font-size:clamp(20px,3vw,36px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:12px}
-.project-featured-body p{color:var(--text2);font-size:clamp(13px,1.8vw,15px);line-height:1.75;flex:1;margin-bottom:20px}
-.proj-tech-stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.tech-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);border:1px solid var(--border);padding:5px 12px;border-radius:20px}
-.proj-link{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(200,240,96,.3);padding-bottom:5px;transition:gap .2s,border-color .2s;width:fit-content}
-.proj-link:hover{gap:16px;border-color:var(--accent)}
-.projects-small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.project-card-sm{background:var(--surface);border-radius:22px;border:1px solid var(--border);padding:clamp(18px,3vw,30px);transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.project-card-sm::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.9,.4,1)}
-.project-card-sm:hover{transform:translateY(-6px);border-color:rgba(200,240,96,.15)}
-.project-card-sm:hover::before{transform:scaleX(1)}
-.card-sm-icon{width:38px;height:38px;margin-bottom:14px;display:block;color:var(--accent);opacity:.85}
-.card-sm-num{font-size:10px;letter-spacing:2px;color:var(--text3);text-transform:uppercase;margin-bottom:8px}
-.project-card-sm h3{font-size:clamp(15px,2vw,20px);font-weight:600;letter-spacing:-.3px;margin-bottom:8px}
-.project-card-sm p{color:var(--text2);font-size:13px;line-height:1.7;flex:1}
-.card-sm-arrow{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--border2);color:var(--text3);font-size:16px;margin-top:16px;transition:all .25s;text-decoration:none;cursor:pointer;background:none;font-family:var(--font)}
-.project-card-sm:hover .card-sm-arrow{background:var(--accent);border-color:var(--accent);color:#080808}
-@media(max-width:1000px){.project-featured{grid-template-columns:1fr}.project-featured-img{min-height:180px}}
-@media(max-width:760px){.projects-small-grid{grid-template-columns:1fr 1fr}.projects-header{margin-bottom:28px}}
-@media(max-width:500px){.projects-small-grid{grid-template-columns:1fr}.project-featured-body{padding:20px}}
+.proj-header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.proj-h{font-size:clamp(30px,4.5vw,58px);font-weight:700;line-height:.95;letter-spacing:-2px}
+.proj-h .outline{-webkit-text-stroke:1px rgba(240,236,228,.2);color:transparent}
+.proj-count{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text3);padding-bottom:6px;white-space:nowrap}
 
-/* ── CONTACT ── */
+/* Filter pills */
+.proj-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filter-pill{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;color:var(--text2);border:1px solid var(--border2);padding:6px 16px;border-radius:40px;background:transparent;cursor:pointer;transition:all .2s;font-family:var(--font)}
+.filter-pill:hover,.filter-pill.active{color:#080808;background:var(--accent);border-color:var(--accent)}
+
+/* Featured card — horizontal strip */
+.proj-featured{display:grid;grid-template-columns:280px 1fr;border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:16px;background:var(--surface);transition:border-color .3s}
+.proj-featured:hover{border-color:rgba(200,240,96,.2)}
+.proj-feat-thumb{background:#111;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:200px}
+.proj-feat-thumb svg{width:56px;height:56px;color:var(--accent);opacity:.7;position:relative;z-index:2}
+.proj-feat-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 45% 55%,rgba(200,240,96,.07) 0%,transparent 65%)}
+.proj-feat-body{padding:clamp(18px,3vw,32px);display:flex;flex-direction:column;justify-content:space-between}
+.proj-tag-line{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+.proj-feat-body h3{font-size:clamp(18px,2.5vw,28px);font-weight:700;letter-spacing:-.5px;line-height:1.1;margin-bottom:8px}
+.proj-feat-body p{color:var(--text2);font-size:13px;line-height:1.75;margin-bottom:14px;flex:1}
+.tech-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tech{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--text3);border:1px solid var(--border);padding:4px 10px;border-radius:14px}
+.proj-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(200,240,96,.25);padding-bottom:4px;transition:gap .2s,border-color .2s;width:fit-content}
+.proj-link:hover{gap:14px;border-color:var(--accent)}
+
+/* Small grid */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:clamp(16px,2.5vw,24px);transition:border-color .3s,transform .25s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.9,.4,1)}
+.proj-card:hover{border-color:rgba(200,240,96,.15);transform:translateY(-4px)}
+.proj-card:hover::before{transform:scaleX(1)}
+.proj-card-icon{width:32px;height:32px;margin-bottom:12px;color:var(--accent);opacity:.8}
+.proj-num{font-size:10px;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase;margin-bottom:6px}
+.proj-card h3{font-size:clamp(14px,1.8vw,17px);font-weight:600;letter-spacing:-.3px;margin-bottom:6px}
+.proj-card p{color:var(--text2);font-size:12px;line-height:1.7;flex:1}
+.proj-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+.proj-card-arrow{width:28px;height:28px;border-radius:50%;border:1px solid var(--border2);display:inline-flex;align-items:center;justify-content:center;color:var(--text3);font-size:13px;transition:all .2s;cursor:pointer;background:none;font-family:var(--font)}
+.proj-card:hover .proj-card-arrow{background:var(--accent);border-color:var(--accent);color:#080808}
+
+@media(max-width:960px){.proj-featured{grid-template-columns:1fr}.proj-feat-thumb{min-height:140px}}
+@media(max-width:720px){.proj-grid{grid-template-columns:1fr 1fr}.proj-header{margin-bottom:20px}}
+@media(max-width:480px){.proj-grid{grid-template-columns:1fr}.proj-feat-body{padding:18px}}
+
+/* CONTACT */
 #contacts{background:var(--bg2)}
 .contact-wrapper{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(36px,6vw,80px);align-items:start}
 .contact-info{padding-top:8px}
@@ -214,7 +222,7 @@ select option{background:var(--bg3);color:var(--text)}
 @media(max-width:900px){.contact-wrapper{grid-template-columns:1fr;gap:32px}.contact-info{padding-top:0}}
 @media(max-width:560px){.form-row{grid-template-columns:1fr}.contact-form-wrap{padding:20px;border-radius:18px}}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56px,8vw,96px) var(--pad) clamp(24px,4vw,44px)}
 .footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,56px);margin-bottom:clamp(40px,5vw,64px)}
 .footer-logo{font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-1px;color:var(--text);margin-bottom:14px}
@@ -237,8 +245,8 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56
 @media(max-width:860px){.footer-main{grid-template-columns:1fr 1fr;gap:36px}}
 @media(max-width:520px){.footer-main{grid-template-columns:1fr;gap:28px}.footer-bottom{flex-direction:column;text-align:center;align-items:center}.footer-tagline{max-width:100%}}
 
-/* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s,transform .9s;will-change:transform}
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s;will-change:transform}
 .reveal.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
@@ -246,18 +254,10 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56
 
 <!-- SOCIAL STRIP -->
 <div class="social-strip">
-  <a href="mailto:mannanrajpoot@gmail.com" title="Email">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-  </a>
-  <a href="#" title="Instagram">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-  </a>
-  <a href="#" title="LinkedIn">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-  </a>
-  <a href="#" title="GitHub">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-  </a>
+  <a href="mailto:mannanrajpoot@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+  <a href="#" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+  <a href="#" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+  <a href="#" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 </div>
 
 <!-- NAV -->
@@ -305,110 +305,117 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ABOUT — redesigned -->
 <section id="about">
   <div class="section-label reveal">02 — About Me</div>
-  <div class="about-compact-grid">
-    <h2 class="about-headline reveal">I Build <span class="outline">Things</span><br>That <span class="acc">Matter</span></h2>
-    <div class="about-intro-col reveal">
-      <p>I'm Mannan Rajpoot — a creative frontend developer and UI/UX designer based in Lahore. Currently pursuing BS Computer Science at the University of the Punjab (2022–2026), I specialise in building digital experiences that are both beautiful and purposeful.</p>
-      <a href="#contacts" class="about-cta">Let's Create Something Great →</a>
+
+  <div class="about-top">
+    <h2 class="about-h reveal">I Build <span class="outline">Things</span><br>That <span class="acc">Matter</span></h2>
+    <div class="about-right-col reveal">
+      <p>I'm Mannan Rajpoot — a creative frontend developer and UI/UX designer based in Lahore. Pursuing BS Computer Science at the University of the Punjab (2022–2026), I specialise in building digital experiences that are both beautiful and purposeful.</p>
+      <a href="#contacts" class="about-cta">Let's create something →</a>
     </div>
   </div>
-  <div class="about-stats-row">
-    <div class="about-stat-card reveal"><div class="big">200<span>+</span></div><div class="lbl">Happy Clients</div></div>
-    <div class="about-stat-card reveal"><div class="big">30<span>+</span></div><div class="lbl">Projects Done</div></div>
-    <div class="about-stat-card reveal"><div class="big">4<span>yrs</span></div><div class="lbl">Experience</div></div>
-    <div class="about-stat-card reveal"><div class="big">15<span>+</span></div><div class="lbl">Awards Won</div></div>
+
+  <div class="about-nums reveal">
+    <div class="about-num-cell"><div class="n">200<sup>+</sup></div><div class="l">Happy Clients</div></div>
+    <div class="about-num-cell"><div class="n">30<sup>+</sup></div><div class="l">Projects Done</div></div>
+    <div class="about-num-cell"><div class="n">4<sup>yrs</sup></div><div class="l">Experience</div></div>
+    <div class="about-num-cell"><div class="n">15<sup>+</sup></div><div class="l">Awards Won</div></div>
   </div>
-  <div class="about-body-row">
-    <p class="reveal">I believe great design isn't just how it looks — it's how it works. I craft pixel-perfect interfaces with obsessive attention to detail, performance, and delightful micro-interactions that make users smile.</p>
-    <p class="reveal">My workflow bridges design and code. I prototype in Figma, build in React, animate with GSAP, and ship fast, accessible products that hold up under real-world conditions on every device.</p>
+
+  <div class="about-body reveal">
+    <p>Great design isn't just how it looks — it's how it works. I craft pixel-perfect interfaces with obsessive attention to detail, performance, and delightful micro-interactions that make users smile.</p>
+    <p>My workflow bridges design and code. I prototype in Figma, build in React, animate with GSAP, and ship fast, accessible products that hold up under real-world conditions on every device.</p>
   </div>
-  <div class="interest-tags reveal">
-    <span class="interest-tag">UI Design</span><span class="interest-tag">Motion Graphics</span><span class="interest-tag">3D Art</span><span class="interest-tag">Branding</span><span class="interest-tag">Web Animation</span><span class="interest-tag">Typography</span><span class="interest-tag">React</span><span class="interest-tag">Figma</span>
+
+  <div class="tag-row reveal">
+    <span class="tag">UI Design</span><span class="tag">Motion Graphics</span><span class="tag">3D Art</span><span class="tag">Branding</span><span class="tag">Web Animation</span><span class="tag">Typography</span><span class="tag">React</span><span class="tag">Figma</span>
   </div>
-  <div class="edu-skills-grid">
+
+  <div class="about-bottom">
     <div class="reveal">
-      <div class="skills-title">Education</div>
-      <div class="edu-item">
-        <div style="display:flex;gap:20px;flex-wrap:wrap">
-          <div style="font-size:11px;color:var(--text3);min-width:85px">2022 — 2026</div>
-          <div><strong>BS Computer Science</strong><br><span style="color:var(--text2);font-size:13px">University of the Punjab, Lahore</span></div>
-        </div>
+      <div class="ab-col-title">Education</div>
+      <div class="edu-entry">
+        <span class="edu-yr">2022 – 2026</span>
+        <div class="edu-info"><strong>BS Computer Science</strong><span>University of the Punjab, Lahore</span></div>
       </div>
-      <div class="edu-item">
-        <div style="display:flex;gap:20px;flex-wrap:wrap">
-          <div style="font-size:11px;color:var(--text3);min-width:85px">2020 — 2022</div>
-          <div><strong>Intermediate (F.Sc)</strong><br><span style="color:var(--text2);font-size:13px">GC University, Lahore</span></div>
-        </div>
+      <div class="edu-entry">
+        <span class="edu-yr">2020 – 2022</span>
+        <div class="edu-info"><strong>Intermediate (F.Sc)</strong><span>GC University, Lahore</span></div>
       </div>
     </div>
     <div class="reveal">
-      <div class="skills-title">Skills &amp; Proficiency</div>
-      <div class="skill-row"><span class="skill-name">UI / UX Design</span><div class="skill-bar"><div class="skill-fill" data-w="0.93"></div></div><span style="font-size:11px;color:var(--accent)">93%</span></div>
-      <div class="skill-row"><span class="skill-name">Figma &amp; Design</span><div class="skill-bar"><div class="skill-fill" data-w="0.90"></div></div><span style="font-size:11px;color:var(--accent)">90%</span></div>
-      <div class="skill-row"><span class="skill-name">Frontend Dev</span><div class="skill-bar"><div class="skill-fill" data-w="0.85"></div></div><span style="font-size:11px;color:var(--accent)">85%</span></div>
-      <div class="skill-row"><span class="skill-name">React / Next.js</span><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div><span style="font-size:11px;color:var(--accent)">70%</span></div>
+      <div class="ab-col-title">Skills &amp; Proficiency</div>
+      <div class="skill-row"><span class="skill-name">UI / UX Design</span><div class="skill-bar"><div class="skill-fill" data-w="0.93"></div></div><span class="skill-pct">93%</span></div>
+      <div class="skill-row"><span class="skill-name">Figma &amp; Design</span><div class="skill-bar"><div class="skill-fill" data-w="0.90"></div></div><span class="skill-pct">90%</span></div>
+      <div class="skill-row"><span class="skill-name">Frontend Dev</span><div class="skill-bar"><div class="skill-fill" data-w="0.85"></div></div><span class="skill-pct">85%</span></div>
+      <div class="skill-row"><span class="skill-name">React / Next.js</span><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div><span class="skill-pct">70%</span></div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS — redesigned -->
 <section id="projects">
   <div class="section-label reveal">03 — Selected Work</div>
-  <div class="projects-header reveal">
-    <h2 class="projects-headline">Featured<br><span class="outline">Projects</span></h2>
-    <div class="projects-count">06 Projects &amp; Counting</div>
+  <div class="proj-header reveal">
+    <h2 class="proj-h">Featured<br><span class="outline">Projects</span></h2>
+    <div class="proj-count">06 Projects &amp; Counting</div>
   </div>
-  <div class="projects-filter reveal">
+
+  <div class="proj-filter reveal">
     <button class="filter-pill active">All</button>
     <button class="filter-pill">UI/UX</button>
     <button class="filter-pill">Frontend</button>
     <button class="filter-pill">Branding</button>
     <button class="filter-pill">Motion</button>
   </div>
-  <div class="project-featured reveal">
-    <div class="project-featured-img">
-      <div class="proj-glow-bg"></div>
-      <svg class="proj-icon-big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+
+  <div class="proj-featured reveal">
+    <div class="proj-feat-thumb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     </div>
-    <div class="project-featured-body">
+    <div class="proj-feat-body">
       <div>
-        <span class="proj-tag">✦ Featured Project — 2024</span>
+        <span class="proj-tag-line">✦ Featured — 2024</span>
         <h3>Nova Studio</h3>
-        <p>A modern digital agency website built with fluid scroll-driven animations, immersive transitions, and a pixel-perfect responsive layout. Delivered a 98/100 Lighthouse score with full cross-browser support.</p>
-        <div class="proj-tech-stack">
-          <span class="tech-tag">React</span><span class="tech-tag">GSAP</span><span class="tech-tag">Figma</span><span class="tech-tag">Three.js</span>
-        </div>
+        <p>A modern digital agency website with scroll-driven animations, immersive transitions, and a pixel-perfect responsive layout. Delivered 98/100 Lighthouse score with full cross-browser support.</p>
+        <div class="tech-row"><span class="tech">React</span><span class="tech">GSAP</span><span class="tech">Figma</span><span class="tech">Three.js</span></div>
       </div>
       <a href="#" class="proj-link">View Case Study →</a>
     </div>
   </div>
-  <div class="projects-small-grid">
-    <div class="project-card-sm reveal">
-      <svg class="card-sm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      <span class="card-sm-num">02 — Branding</span>
+
+  <div class="proj-grid">
+    <div class="proj-card reveal">
+      <svg class="proj-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <span class="proj-num">02 — Branding</span>
       <h3>EcoChain</h3>
-      <p>Sustainable brand identity system with interactive storytelling, motion guidelines, and a full design language.</p>
-      <div class="proj-tech-stack" style="margin-top:12px"><span class="tech-tag">Figma</span><span class="tech-tag">After Effects</span></div>
-      <button class="card-sm-arrow">→</button>
+      <p>Sustainable brand identity with interactive storytelling, motion guidelines, and a full design language.</p>
+      <div class="proj-card-footer">
+        <div class="tech-row" style="margin:0"><span class="tech">Figma</span><span class="tech">After Effects</span></div>
+        <button class="proj-card-arrow">→</button>
+      </div>
     </div>
-    <div class="project-card-sm reveal">
-      <svg class="card-sm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="13.5" cy="6.5" r="4.5"/><circle cx="8" cy="15" r="4"/><circle cx="17.5" cy="16.5" r="3.5"/></svg>
-      <span class="card-sm-num">03 — UI Design</span>
+    <div class="proj-card reveal">
+      <svg class="proj-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="13.5" cy="6.5" r="4.5"/><circle cx="8" cy="15" r="4"/><circle cx="17.5" cy="16.5" r="3.5"/></svg>
+      <span class="proj-num">03 — UI Design</span>
       <h3>Artflow</h3>
       <p>Creative portfolio template with glassmorphism aesthetics, layered micro-interactions, and dark mode.</p>
-      <div class="proj-tech-stack" style="margin-top:12px"><span class="tech-tag">HTML/CSS</span><span class="tech-tag">JS</span></div>
-      <button class="card-sm-arrow">→</button>
+      <div class="proj-card-footer">
+        <div class="tech-row" style="margin:0"><span class="tech">HTML/CSS</span><span class="tech">JS</span></div>
+        <button class="proj-card-arrow">→</button>
+      </div>
     </div>
-    <div class="project-card-sm reveal">
-      <svg class="card-sm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-      <span class="card-sm-num">04 — Frontend</span>
+    <div class="proj-card reveal">
+      <svg class="proj-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span class="proj-num">04 — Frontend</span>
       <h3>Pulse Dashboard</h3>
       <p>Analytics dashboard with real-time data visualisation, drag-and-drop layout, and full keyboard accessibility.</p>
-      <div class="proj-tech-stack" style="margin-top:12px"><span class="tech-tag">React</span><span class="tech-tag">D3.js</span></div>
-      <button class="card-sm-arrow">→</button>
+      <div class="proj-card-footer">
+        <div class="tech-row" style="margin:0"><span class="tech">React</span><span class="tech">D3.js</span></div>
+        <button class="proj-card-arrow">→</button>
+      </div>
     </div>
   </div>
 </section>
@@ -422,23 +429,17 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56
       <p class="contact-desc">Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you within 24 hours.</p>
       <div class="contact-links">
         <a href="mailto:mannanrajpoot@gmail.com" class="contact-link-item">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          </div>
+          <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
           <div class="contact-link-info"><div class="contact-link-label">Email</div><div class="contact-link-val">mannanrajpoot@gmail.com</div></div>
           <span class="contact-link-arrow">→</span>
         </a>
         <a href="#" class="contact-link-item">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
+          <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
           <div class="contact-link-info"><div class="contact-link-label">LinkedIn</div><div class="contact-link-val">linkedin.com/in/mannanrajpoot</div></div>
           <span class="contact-link-arrow">→</span>
         </a>
         <a href="#" class="contact-link-item">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </div>
+          <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
           <div class="contact-link-info"><div class="contact-link-label">GitHub</div><div class="contact-link-val">github.com/mannanrajpoot</div></div>
           <span class="contact-link-arrow">→</span>
         </a>
@@ -459,12 +460,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56
         <div class="input-group"><label>Email Address</label><input type="email" placeholder="hello@example.com" required></div>
         <div class="input-group">
           <label>Service</label>
-          <select>
-            <option value="" disabled selected>Select a service...</option>
-            <option>UI / UX Design</option><option>Frontend Development</option>
-            <option>Motion &amp; Animation</option><option>Brand Identity</option>
-            <option>Consulting / Audit</option><option>Other</option>
-          </select>
+          <select><option value="" disabled selected>Select a service...</option><option>UI / UX Design</option><option>Frontend Development</option><option>Motion &amp; Animation</option><option>Brand Identity</option><option>Consulting / Audit</option><option>Other</option></select>
         </div>
         <div class="input-group"><label>Project Details</label><textarea placeholder="Tell me about your project, timeline, and budget..."></textarea></div>
         <button type="submit" class="submit-btn">Send Message →</button>
@@ -480,46 +476,23 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56
       <div class="footer-logo">Mannan<span>.</span></div>
       <p class="footer-tagline">Creative developer &amp; designer crafting pixel-perfect digital experiences from Lahore, Pakistan.</p>
       <div class="footer-social">
-        <a href="#" title="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="#" title="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
-        <a href="#" title="Behance">
-          <svg viewBox="0 0 24 24"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.36-1.05.62-1.7.78-.64.17-1.31.25-2.01.25H0V4.51h6.938v-.007zM16.94 13.44c.16.98.59 1.7 1.27 2.16.68.46 1.53.69 2.54.69.76 0 1.43-.17 2-.52s.94-.77 1.12-1.27h2.89c-.46 1.42-1.19 2.44-2.18 3.06-.99.62-2.17.93-3.54.93-1.02 0-1.93-.16-2.74-.49-.81-.33-1.49-.78-2.05-1.37-.56-.59-.99-1.29-1.28-2.11-.3-.82-.45-1.72-.45-2.7 0-.96.16-1.85.47-2.66.31-.81.74-1.51 1.31-2.1.57-.59 1.24-1.05 2.04-1.38.79-.33 1.68-.49 2.65-.49 1.09 0 2.05.2 2.86.61.81.41 1.47.97 1.99 1.67.52.7.89 1.51 1.12 2.44.23.92.31 1.89.25 2.91h-8.9c.02.27.06.52.12.75zm3.81-5.23c-.54 0-1.01.1-1.41.32-.4.21-.73.47-.99.79-.26.32-.45.67-.58 1.06-.12.38-.19.76-.19 1.14h6.26c-.11-.96-.43-1.71-.96-2.25-.52-.54-1.21-.81-2.08-.81zM15.24 5.56h6.88V7.2h-6.88V5.56z"/></svg>
-        </a>
-        <a href="#" title="Dribbble">
-          <svg viewBox="0 0 24 24"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.017-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.816zm-11.62-2.073c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.176zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.477 0-.945.04-1.4.113v.175zm4.48 8.616c-3.826-2.03-7.225-2.08-8.99-2.004.104.615.302 1.2.57 1.74.705-.218 5.57-1.685 8.42.264z"/></svg>
-        </a>
+        <a href="#" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        <a href="#" title="Behance"><svg viewBox="0 0 24 24"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.36-1.05.62-1.7.78-.64.17-1.31.25-2.01.25H0V4.51h6.938v-.007zM16.94 13.44c.16.98.59 1.7 1.27 2.16.68.46 1.53.69 2.54.69.76 0 1.43-.17 2-.52s.94-.77 1.12-1.27h2.89c-.46 1.42-1.19 2.44-2.18 3.06-.99.62-2.17.93-3.54.93-1.02 0-1.93-.16-2.74-.49-.81-.33-1.49-.78-2.05-1.37-.56-.59-.99-1.29-1.28-2.11-.3-.82-.45-1.72-.45-2.7 0-.96.16-1.85.47-2.66.31-.81.74-1.51 1.31-2.1.57-.59 1.24-1.05 2.04-1.38.79-.33 1.68-.49 2.65-.49 1.09 0 2.05.2 2.86.61.81.41 1.47.97 1.99 1.67.52.7.89 1.51 1.12 2.44.23.92.31 1.89.25 2.91h-8.9c.02.27.06.52.12.75zm3.81-5.23c-.54 0-1.01.1-1.41.32-.4.21-.73.47-.99.79-.26.32-.45.67-.58 1.06-.12.38-.19.76-.19 1.14h6.26c-.11-.96-.43-1.71-.96-2.25-.52-.54-1.21-.81-2.08-.81zM15.24 5.56h6.88V7.2h-6.88V5.56z"/></svg></a>
+        <a href="#" title="Dribbble"><svg viewBox="0 0 24 24"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.017-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.816zm-11.62-2.073c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.176zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.477 0-.945.04-1.4.113v.175zm4.48 8.616c-3.826-2.03-7.225-2.08-8.99-2.004.104.615.302 1.2.57 1.74.705-.218 5.57-1.685 8.42.264z"/></svg></a>
       </div>
     </div>
     <div>
       <div class="footer-col-title">Navigation</div>
-      <ul class="footer-links-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contacts">Contact</a></li>
-      </ul>
+      <ul class="footer-links-list"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#contacts">Contact</a></li></ul>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
-      <ul class="footer-links-list">
-        <li><a href="#contacts">UI / UX Design</a></li>
-        <li><a href="#contacts">Frontend Dev</a></li>
-        <li><a href="#contacts">Motion Design</a></li>
-        <li><a href="#contacts">Brand Identity</a></li>
-        <li><a href="#contacts">Consulting</a></li>
-      </ul>
+      <ul class="footer-links-list"><li><a href="#contacts">UI / UX Design</a></li><li><a href="#contacts">Frontend Dev</a></li><li><a href="#contacts">Motion Design</a></li><li><a href="#contacts">Brand Identity</a></li><li><a href="#contacts">Consulting</a></li></ul>
     </div>
     <div>
       <div class="footer-col-title">Get In Touch</div>
-      <ul class="footer-links-list">
-        <li><a href="mailto:mannanrajpoot@gmail.com">mannanrajpoot@gmail.com</a></li>
-        <li><a href="#">Lahore, Pakistan</a></li>
-        <li><a href="#">Available for Work</a></li>
-      </ul>
+      <ul class="footer-links-list"><li><a href="mailto:mannanrajpoot@gmail.com">mannanrajpoot@gmail.com</a></li><li><a href="#">Lahore, Pakistan</a></li><li><a href="#">Available for Work</a></li></ul>
       <div style="margin-top:22px">
         <div class="footer-col-title" style="margin-bottom:10px">Newsletter</div>
         <form style="display:flex;gap:8px;flex-wrap:wrap" onsubmit="return false">
@@ -540,20 +513,20 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:clamp(56
   var nav=document.getElementById('navbar');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)});
   var ro=new IntersectionObserver(function(entries){
-    entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('visible')},i*80);ro.unobserve(e.target)}})
-  },{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
+    entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('visible')},i*70);ro.unobserve(e.target)}})
+  },{threshold:0.08,rootMargin:'0px 0px -16px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
   var so=new IntersectionObserver(function(entries){
     entries.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('.skill-fill').forEach(function(f){var w=f.getAttribute('data-w');if(w)f.style.transform='scaleX('+w+')'});so.unobserve(e.target)}})
   },{threshold:0.3});
-  var eg=document.querySelector('.edu-skills-grid');
-  if(eg)so.observe(eg);
+  var ab=document.querySelector('.about-bottom');
+  if(ab)so.observe(ab);
   document.querySelectorAll('.filter-pill').forEach(function(p){
     p.addEventListener('click',function(){document.querySelectorAll('.filter-pill').forEach(function(x){x.classList.remove('active')});p.classList.add('active')})
   });
   setTimeout(function(){
-    document.querySelectorAll('.skill-fill').forEach(function(f){if(f.getBoundingClientRect().top<window.innerHeight-100)f.style.transform='scaleX('+f.dataset.w+')'})
-  },600);
+    document.querySelectorAll('.skill-fill').forEach(function(f){if(f.getBoundingClientRect().top<window.innerHeight-80)f.style.transform='scaleX('+f.dataset.w+')'})
+  },500);
 })();
 </script>
 </body>
